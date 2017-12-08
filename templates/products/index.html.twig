@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1> Produtos </h1>
+    <hr>
+    <ul>
+        {% for p in products %}
+            <li>
+                Nome: {{p.name}}
+                - Preço: R$ {{p.price|number_format(2, ',', '.')}}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

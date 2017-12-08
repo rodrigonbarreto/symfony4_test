@@ -17,9 +17,10 @@ class ProductController extends Controller
         $products = $this->getDoctrine()
             ->getRepository(Product::class)
             ->findAll();
-
-        var_dump($products);
-        return new Response('Welcome to your new controller!');
+        
+        return $this->render('products/index.html.twig',[
+            'products' => $products
+        ]);
 
     }
 }
