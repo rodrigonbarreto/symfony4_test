@@ -5,10 +5,13 @@
     <hr>
     <ul>
         {% for p in products %}
+
             <li>
-                Nome: {{p.name}}
+                <a href="{{ path('product_edit', { 'id': p.id }) }}">{{ p.id }}</a> -
+                Nome: {{p.name}} -
                 - Preço: R$ {{p.price|number_format(2, ',', '.')}}
             </li>
         {% endfor %}
     </ul>
+    <a href="{{ path('product_new') }}">Create a new Product</a>
 {% endblock %}
